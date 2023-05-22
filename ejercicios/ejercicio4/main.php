@@ -3,30 +3,33 @@ personas y determine el nombre de la persona con mayor edad.-->
 
 <?php
 
-if ($_GET) {
-    $edad1 = $_GET["edad1"];
-    $edad2 = $_GET["edad2"];
-    $edad3 = $_GET["edad3"];
-    $nombre1 = $_GET["nombre1"];
-    $nombre2 = $_GET["nombre2"];
-    $nombre3 = $_GET["nombre3"];
-    $nombreM;
-    $edadM = 0;
-    if ($edad1 > $edadM || $edad2 > $edadM || $edad3 > $edadM) {
-        if ($edad1 > $edadM) {
-            $edadM = $edad1;
-            $nombreM = $nombre1;
+    $edad1 = $_POST["edad1"];
+    $edad2 = $_POST["edad2"];
+    $edad3 = $_POST["edad3"];
+    $nombre1 = $_POST["nombre1"];
+    $nombre2 = $_POST["nombre2"];
+    $nombre3 = $_POST["nombre3"];
+
+    $nombreMayor;
+    $edadMayor = 0;
+
+    while ($edad1 > $edadMayor || $edad2 > $edadMayor || $edad3 > $edadMayor) {
+
+        if ($edad1 > $edadMayor) {
+            $edadMayor = $edad1;
+            $nombreMayor = $nombre1;
         }
-        if ($edad2 > $edadM){
-            $edadM = $edad2;
-            $nombreM = $nombre2;
+        if ($edad2 > $edadMayor){
+            $edadMayor = $edad2;
+            $nombreMayor = $nombre2;
         }
-        if ($edad3 > $edadM){
-            $edadM = $edad3;
-            $nombreM = $nombre3;
+        if ($edad3 > $edadMayor){
+            $edadMayor = $edad3;
+            $nombreMayor = $nombre3;
         }
+        break;
     }
 
-    echo "La edad mas alta le corresponde a {$nombreM} con {$edadM}";
-}
-?>
+    echo "La edad mas alta le corresponde a {$nombreMayor} con {$edadMayor}";
+
+?>  

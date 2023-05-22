@@ -16,6 +16,9 @@
     if ($number > 10) {
         echo "Su número es mayor a 10";
     }
+    else {
+        echo "Su número no es mayor a 10";
+    }
 
     }
 
