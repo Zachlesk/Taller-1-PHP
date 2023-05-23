@@ -8,22 +8,28 @@ VALOR Y MENOR VALOR. -->
 
 <?php
 
-$enviar = '"enviar"';
-$post = '"post"';
-$text = '"number"';
-$submit = '"submit"';
-$name = '"numero"';
-$numero = $_POST["numero"];
 
-while ($numero != 0) {
-    echo "<form method=$post> 
-            <label for=$name>Ingrese un nuevo numero</label>
-            <input type=$text name=$name><br><br>
-            <input type=$submit value= $enviar>
-        </form>";
-    $numero = $_POST["numero"];
-    break
-};
+session_start();
+
+if (isset($POST["ejecutar"])) {
+    if ($_POST ["ejecutar"] == "Agregar número") {
+        $numero = $_POST["numero"];
+        if ($numero != 0) {
+            array_push($_SESSION["numeros"], $numero);
+        };
+
+    } else if ($_POST ["ejecutar"] == "Mostrar resultados") {
+        $numeros = $_SESSION["numeros"];
+        $suma = array_sum($numeros);
+        $promedio = count($numeros) > 0 ? $suma / count($numeros) : 0; 
+        $mayor = max($numeros);
+        $menor = min($numeros);
+        $contador = count($numeros);  
+
+    }
+}
+
+
         
         
 ?>

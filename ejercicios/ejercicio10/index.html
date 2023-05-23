@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sp">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +9,13 @@
 <body>
     
 <form method="post" action="ejercicio10.php">
-    <label> Digite su número </label>
-    <input type="text" name="numero" placeholder="numeros">
-    
+    <label for="numero"> Digite su número </label>
+    <input type="number" name="numero" placeholder="numeros">
+    <input type="submit" name="ejecutar" value="Agregar número"><br> <br>
+    <label> Mostrar resultado de números enviados </label>
+    <input type="submit" name="ejecutar" value= "Mostrar resultados"> 
+    <label> Limpiar datos: </label>
+    <button> <a href=""> Limpiar datos </a></button>  
 </form>
 
 </body>
